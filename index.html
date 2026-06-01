@@ -1,1 +1,36 @@
-# live-Shopping-Cart
+<html>
+    <body style="text-align:center; margin-top:100px">
+        <h1>🛒Shopping Cart</h1>
+        
+        <h2>Cart Management</h2>
+        
+        <input type="text" id="foodName" placeholder="Please Enter a Food Items">
+        
+        <button onclick="foodItems()">Food Items</button>
+    
+        <p id="message"></p>
+        <p id="counterDisplay"></p>
+        <br><br>
+        <script>
+            let food = ["Rice", "Daal"];        //take variables inside the array
+            function foodItems() {              //if i will press the button, function will be active
+                let newFood = document.getElementById("foodName").value;    //inside the input box,remove the food items and store it into the temporary box,like newfood
+                document.getElementById("foodName").value= "";          //after blank the input box, new items will be added
+                if (newFood) { 
+                food.push(newFood); 
+                    //into the box of newFood,array list items like daal will shifted into the Godown(food)
+                     
+                }
+            
+                let text="";                       //create blank text variable for running loop
+                for (let i=0; i<food.length; i++){  //use For-loop for reading items of array
+                
+                    text= text + food[i] + " ";     //to joint current items with previous items and display the "text' in display board
+                }
+                document.getElementById("message").innerText=text;      //show the bucket list (text) to the costumer
+                }
+                
+
+        </script>
+    </body>
+</html>
